@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<title>Autcomplete</title>
+		<link rel="stylesheet" type="text/css" href="sp://import/css/adam.css" />
+		<link rel="stylesheet" type="text/css" href="sp://import/css/api.css" />
+		<link rel="stylesheet" href="css/jqueryui.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	</head>
+	<body>
+
+		<div class="page" id="home">
+			<!-- MARKDOWN EXPORT START -->
+			<div id="markdown"></div>
+
+			<h2>The Basics</h2>
+			<ul>
+				<li><a href="spotify:app:foundation:manifest">Setting up your app</a></li>
+				<li><a href="spotify:app:foundation:listeners">Spotify Event Listeners</a></li>
+				<li><a href="spotify:app:foundation:players">Players and playlists</a></li>
+			</ul>
+		</div><!-- #home -->
+		
+		<div class="page" id="manifest">
+			<h1>Setting up your manifest <a href="spotify:app:foundation:home" class="goHome">home</a></h1>
+			
+			<p>First things first, set up your <strong>manifest.json</strong> file in the apps root directory. Here is the manifest for this app:</p>
+			<script src="http://gist-it.appspot.com/github/mitchmalone/foundation/raw/master/README.md"></script>
+			
+			<p>Here is a basic app file structure</p>
+			<img src="images/files.png" width="172" height="468" alt="Files" style="margin: 0 auto; border: 3px solid #999;" />
+		</div><!-- #manifest -->
+		
+		<div class="page" id="listeners">
+			<h1>Spotify Event Listeners <a href="spotify:app:foundation:home" class="goHome">home</a></h1>
+			<p>The key to actually making your app useful is making it react to clicks, make paging work, listening to track changes, accepting links, etc.</p>
+			
+			<h2>Paging</h2>
+			<p>Firstly, start thinking about arguments instead of urls. In the same way urls are separated by forward-slashes (/), Spotify url's are colon (:) delimited and can be accessed at any time via <strong>models.application.arguments</strong>.</p>
+			<p>Here is a simple example:</p>
+			<script src="https://gist.github.com/3448264.js?file=paging.js"></script>
+			
+			<h2>Track Changes</h2>
+			<p>Now let's take a peak at the track changes and let the user know we like their taste in music.</p>
+			<script src="https://gist.github.com/3448436.js?file=trackchange.js"></script>
+			
+			<h2>Item Dropped</h2>
+			<p>coming soon</p>
+		</div><!-- #manifest -->
+
+		<div class="page" id="players">
+			<h1>Players and playlists <a href="spotify:app:foundation:home" class="goHome">home</a></h1>
+
+			<h2>Player</h2>
+			<p>Everyone loves Radiohead</p>
+			<div class="player"></div>
+			<script src="https://gist.github.com/3448777.js?file=basicplayer.js"></script>
+			
+			<h2>Playlist</h2>
+			<div class="playlist"></div>
+			
+			<h2>Custom Player</h2>
+			<div class="customPlayer"></div>
+		</div><!-- #manifest -->
+
+		<!-- 
+
+		<div>
+			<h2>Autocomplete using sp.core.search</h2>
+			<input class="autocomplete-sp" placeholder="Search for a track" />
+		</div>
+
+		<div>
+			<h2>Autocomplete using web API</h2>
+			<input class="autocomplete-web" placeholder="Search for a track" />
+		</div>
+
+		<div>
+			<h2>Autocomplete using new search</h2>
+			<input class="autocomplete-new" placeholder="Search for a track" />
+		</div -->
+
+
+
+		<!-- BEGIN SCRIPTS -->
+		<script type="text/javascript" charset="utf-8" src="js/script.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/bootstrap.js"></script>
+		<!-- END SCRIPTS -->
+	</body>
+</html>

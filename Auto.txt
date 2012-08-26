@@ -1,0 +1,82 @@
+// Autocomplete using the older sp.core API implementation
+$('.autocomplete-sp').autocomplete({
+	source: function(request, response) {
+		var d = new Date();
+	    var startTime = d.valueOf();
+		
+		sp.core.search($('.autocomplete-sp').val(), {
+			onSuccess: function(result) {
+				d = new Date();
+		        var endTime = d.valueOf();
+		        var r = endTime - startTime;
+		        console.log('Loaded in ',  r , 'ms');
+				
+				response($.map(result.tracks, function(track) {
+					return {
+						item: track.uri,
+						label: track.name + ' by ' + track.artists[0].name
+					}
+				}));
+			}
+		});
+	},
+	minLength: 3,
+	select: function( event, ui ) {
+		console.log('Selected', ui.item.label)
+	}
+});
+
+// Autocomplete using the web API implementation
+$('.autocomplete-web').autocomplete({
+	source: function( request, response ) {
+		var d = new Date();
+	    var startTime = d.valueOf();
+		$.ajax({
+			url: "http://ws.spotify.com/search/1/track.json",
+			dataType: "json",
+			data: { q: $('.autocomplete-web').val() },
+			success: function(data) {
+				d = new Date();
+		        var endTime = d.valueOf();
+		        var r = endTime - startTime;
+		        console.log('Loaded in ',  r , 'ms');
+
+				response($.map(data.tracks, function(track) {
+					return {
+						item: track.href,
+						label: track.name + ' by ' + track.artists[0].name
+					}
+				}));
+			}
+		});
+	}
+});
+
+// Autocomplete using the new API implementation
+$('.autocomplete-new').autocomplete({
+	source: function( request, response ) {
+		var d = new Date();
+	    var startTime = d.valueOf();
+		
+		var search = new m.Search($('.autocomplete-new').val());
+		search.localResults = m.LOCALSEARCHRESULTS.APPEND;
+
+		search.observe(m.EVENT.CHANGE, function() {
+			search.tracks.forEach(function(track) {
+				response($.map(search._tracks, function(track) {
+					d = new Date();
+			        var endTime = d.valueOf();
+			        var r = endTime - startTime;
+			        console.log('Loaded in ',  r, 'ms');
+					
+					return {
+						item: track.uri,
+						label: track.name + ' by ' + track.artists[0].name
+					}
+				}));
+			});
+		});
+
+		search.appendNext();
+	}
+});

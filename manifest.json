@@ -1,0 +1,43 @@
+{
+	"BundleType": "Application",
+	"BundleIdentifier": "foundation",
+	"BundleCopyright": "2012 Mitch Malone",
+	"BundleVersion": "1.0.0",
+	"RequiredInterface": 1,
+	"RequiredPermissions": [
+		"http://ajax.googleapis.com/",
+		"http://ws.spotify.com/",
+		"https://gist.github.com/",
+		"http://gist-it.appspot.com/",
+		"http://wearehunted.com/",
+		"http://media2.wearehunted.com/"
+	],
+	"AppIcon": {
+		"18x18": "brick.png"
+	},
+	"AppName": {
+		"en": "Spotify Foundation"
+	},
+	"AppURL": "http://www.mitchmalone.name/projects/spotify-foundation/",
+	"AppDescription": {
+		"en": "Spotify Foundation"
+	},
+	"VendorIdentifier": "mitchmalone",
+	"VendorName": {
+		"en": "Mitch Malone"
+	},
+	"SupportedLanguages": [
+		"en"
+	],
+	"DefaultTabs": [
+	    {
+	        "arguments": "home",
+	        "title": { "en": "Home" }
+	    },
+		{
+	        "arguments": "other",
+	        "title": { "en": "Other Tab" }
+	    }
+	]
+}
+
