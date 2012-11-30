@@ -1,6 +1,6 @@
 /*
-	Reebok Core Script
-	Author: Mitch Malone & Ben Novakovic - We Are Hunted
+	Foundation Player Script
+	Author: Mitch Malone
 	Version 0.1
 */
 
