@@ -1,7 +1,7 @@
 Spotify Foundation
 =========
 
-**Note:** This project is no longer active due to Spotify removing the apps feature from their desktop app.
+**Note: This project is no longer active due to Spotify removing the apps feature from their desktop app.**
 
 Spotify Foundation is a freely available and open source foundational Spotify App takes resources such as [kitchensink](https://github.com/ptrwtts/kitchensink) by [Peter Watts](http://swarm.fm/) and [Spotify Apps Tutorial](https://github.com/mager/spotify-apps-tutorial) by Andrew Mager and attempts to expand on them.
 
